@@ -7,7 +7,13 @@ accounts = []
   puts "Give me a last name:"
   last_name = gets.chomp
   puts "Give me your email address:"
-  email = gets.chomp
+  while true
+    email = gets.chomp
+    break if email.include?("@") && email[-4..-1] == ".com"
+    puts "NOPE!!!"
+    puts "Give me a valid email address"
+  end
+
   account_number = rand.to_s[2..12]
 
   account = {
