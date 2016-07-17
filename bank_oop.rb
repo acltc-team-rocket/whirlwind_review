@@ -3,11 +3,16 @@ class Account
   attr_accessor :first_name, :last_name, :email
   attr_reader :account_number
 
-  def initialize(first_name, last_name, email)
-    @first_name = first_name
-    @last_name = last_name
-    @email = email
+  def initialize
     @account_number = create_account_number
+  end
+
+  def pass_account_values(account_hash)
+    #pass in values
+  end
+
+  def user_input_vales
+    #gets.chomp
   end
 
   def create_account_number
@@ -45,11 +50,13 @@ end
 
 account_list = AccountList.new
 
-bob = Account.new("Bob", "Ross", "bross@gmail.com")
-account_list.add_account(bob)
 
-sally = Account.new("Sally", "Foster", "sfoster@gmail.com")
-account_list.add_account(sally)
+
+account = Account.new
+account_list.add_account(account)
+
+# sally = Account.new("Sally", "Foster", "sfoster@gmail.com")
+# account_list.add_account(sally)
 
 account_list.print_all_accounts
 
